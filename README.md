@@ -37,5 +37,6 @@ Persistent storage of watched items. You can use your custom server, database or
 Unit tests. It is up to you which testing framework to use.
 
 c.	Known bugs
+
 /videoplayer/:url redirect to /movie
 Video not playing with dynamic src parameter, but static parameter will work the video
