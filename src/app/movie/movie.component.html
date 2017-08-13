@@ -1,0 +1,19 @@
+<div class="row">
+
+  <ngx-slick class="carousel" #slickModal="slick-modal" [config]="slideConfig" (afterChange)="afterChange($event)">
+    <div ngxSlickItem *ngFor="let movie of movieArray" class="slide">
+      <!--onError="this.src='app/img/no_cover_image.png';"-->
+      <img (keyup.enter)="movieClick(movie)" (click)="movieClick(movie)"  src="{{ movie.images[0].url }}" alt="" width="100%">
+      <label>{{ movie.title }}</label>
+    </div>
+  </ngx-slick>
+  <div><h1>Previously Watched</h1>
+    <ngx-slick class="carousel" #slickModal="slick-modal" [config]="slideConfig" (afterChange)="afterChange($event)">
+      <div ngxSlickItem *ngFor="let recent_movie of recentMovieArray" class="slide">
+        <img onError="this.src='app/img/no_cover_image.png';" src="{{ recent_movie.images[0].url }}" alt=""
+             width="100%">
+        <label>{{ recent_movie.title }}</label>
+      </div>
+    </ngx-slick>
+  </div>
+</div>
