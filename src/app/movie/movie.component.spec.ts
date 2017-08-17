@@ -10,7 +10,7 @@ describe('MovieComponent', () => {
     TestBed.configureTestingModule({
       declarations: [ MovieComponent ]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

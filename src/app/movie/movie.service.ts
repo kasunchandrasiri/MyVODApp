@@ -10,11 +10,12 @@ export class MovieService {
 
   }
 
+  on = false;
   private moviesUrl = 'https://demo2697834.mockable.io/movies';
 
   getMovies() {
     return this.http.get(this.moviesUrl)
-      .map(res =>  <Movie[]> res.json())
+      .map(res => <Movie[]> res.json())
       .catch(this.handleError);
   }
 

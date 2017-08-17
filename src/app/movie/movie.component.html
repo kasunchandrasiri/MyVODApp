@@ -3,7 +3,7 @@
   <ngx-slick class="carousel" #slickModal="slick-modal" [config]="slideConfig" (afterChange)="afterChange($event)">
     <div ngxSlickItem *ngFor="let movie of movieArray" class="slide">
       <!--onError="this.src='app/img/no_cover_image.png';"-->
-      <img (keyup.enter)="movieClick(movie)" (click)="movieClick(movie)"  src="{{ movie.images[0].url }}" alt="" width="100%">
+      <img (keyup.enter)="movieClick(movie)" (click)="movieClick(movie)" onerror="this.src='http://lorempixel.com/214/317/?t=3'"  src="{{ movie.images[0].url }}" alt="" width="100%">
       <label>{{ movie.title }}</label>
     </div>
   </ngx-slick>
@@ -16,4 +16,7 @@
       </div>
     </ngx-slick>
   </div>
+</div>
+<div class="row" *ngIf="on">
+  <video width="320" height="240" (click)="closeMovie()" id="backgroundvid" controls autoplay><source src="{{movieSrc}}" type="video/mp4"></video>
 </div>

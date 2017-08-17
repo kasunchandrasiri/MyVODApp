@@ -15,7 +15,8 @@ export class MovieComponent implements OnInit {
   constructor(private  movieService: MovieService, private router:Router) {
   }
 
-
+  on: boolean = false;
+  movieSrc:string;
   errorMessage: string;
   videoSource: string;
   movieString: string;
@@ -47,8 +48,14 @@ export class MovieComponent implements OnInit {
   }
 
   movieClick(movie: Movie) {
-    // this.recentMovieArray.push(movie);
-    this.router.navigate(['/videoplayer',encodeURIComponent(movie.contents[0].url)]);
+    this.recentMovieArray.push(movie);
+    this.on = !this.on;
+    this.movieSrc= movie.contents[0].url;
   }
+  closeMovie(){
+    this.on = !this.on;
+  }
+
+
 
 }
